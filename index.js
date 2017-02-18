@@ -31,15 +31,6 @@ const handlers = {
             this.emit(':tell', 'Okay, you have ' + timeToTarget + ' left.');
         });
     },
-    'StartTimeIntent': function () {
-        const time = this.event.request.intent.slots.Time.value;
-        const userId = this.event.session.user.userId.replace(/\./g, '_');
-        const target = moment(time, 'HH:mm');
-        const timeToTarget = moment().to(target, true);
-        saveToFirebase(userId, 'target', target.toJSON(), () => {
-            this.emit(':tell', 'Okay, you have ' + timeToTarget + ' left.');
-        });
-    },
     'GetStatusIntent': function () {
         const userId = this.event.session.user.userId.replace(/\./g, '_');
         request.get(
