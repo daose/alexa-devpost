@@ -20,7 +20,7 @@ const saveToFirebase = (userId, path, object, callback) => {
 
 const handlers = {
     'LaunchRequest': function () {
-        this.emit(':ask', strings.LAUNCH, strings.REPROMPT);
+        this.emit(':ask', strings.LAUNCH, strings.LAUNCH);
     },
     'StartDurationIntent': function () {
         const duration = this.event.request.intent.slots.Duration.value;
