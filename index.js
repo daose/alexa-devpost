@@ -66,6 +66,9 @@ const handlers = {
                 }
             }
         );
+    },
+    'Unhandled': function () {
+        this.emit('LaunchRequest');
     }
 };
 
